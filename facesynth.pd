@@ -1,0 +1,27 @@
+#N canvas 504 -440 450 300 10;
+#X obj 89 18 key;
+#X floatatom 89 55 5 0 0 0 - - -;
+#X obj 89 90 mtof;
+#X obj 82 202 dac~;
+#X obj 89 131 phasor~;
+#X obj 89 166 *~;
+#X obj 177 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 217 78 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 260 147 sendOSC;
+#X msg 267 112 disconnect;
+#X msg 266 87 connect 0.0.0.0 9999;
+#X msg 268 40 send /keys \$1;
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 0 11 0;
+#X connect 2 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 0 3 1;
+#X connect 7 0 5 1;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
